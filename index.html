@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serendib Travel & Adventures | Explore Sri Lanka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>Serendib <span>Travels</span></h2>
+        </div>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#districts">25 Districts</a></li>
+                <li><a href="#guidance">Travel Guidance</a></li>
+                <li><a href="#budget">Stay & Budgets</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#contact">Partner With Us</a></li>
+            </ul>
+        </nav>
+        <div class="contact-quick">
+            <a href="tel:+94771234567" class="btn-phone">📞 +94 77 123 4567</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Discover the Wonder of Sri Lanka</h1>
+            <p>Explore all 25 districts, curated travel guidance, flexible budget stays, and local transportation options.</p>
+            <div class="search-bar">
+                <input type="text" id="districtSearch" placeholder="Search a district (e.g., Kandy, Jaffna, Galle)..." onkeyup="filterDistricts()">
+            </div>
+        </div>
+    </section>
+
+    <!-- 25 Districts Grid -->
+    <section id="districts" class="section">
+        <div class="section-title">
+            <h2>Explore 25 Unique Districts</h2>
+            <p>Click on any district card to view precious highlights, budget breakdowns, and travel tips.</p>
+        </div>
+
+        <div class="district-grid" id="districtGrid">
+            <!-- Populated via JavaScript dynamically -->
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="districtModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Modal content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Travel Guidance & Transport -->
+    <section id="guidance" class="section bg-light">
+        <div class="section-title">
+            <h2>Travel Guidance & Transport Facilities</h2>
+            <p>Choose your preferred mode of island travel based on comfort, speed, and budget.</p>
+        </div>
+        <div class="guidance-grid">
+            <div class="guide-card">
+                <div class="icon">🚆</div>
+                <h3>Scenic Train Journeys</h3>
+                <p>Ideal for hill country routes (Colombo -> Kandy -> Ella -> Badulla). Experience famous viewlines over Nine Arches Bridge.</p>
+                <span class="tag">Budget Friendly: $2 - $15</span>
+            </div>
+            <div class="guide-card">
+                <div class="icon">🚕</div>
+                <h3>Private Call Taxis & Chauffeurs</h3>
+                <p>Best for comfort, families, and custom multi-day island tours. Vehicles range from sedans to spacious mini-vans.</p>
+                <span class="tag">Medium - Luxury: $40 - $90/day</span>
+            </div>
+            <div class="guide-card">
+                <div class="icon">🛺</div>
+                <h3>Tuk-Tuk (Auto Rickshaw)</h3>
+                <p>Perfect for quick local trips, short coastal hops, and authentic city exploration.</p>
+                <span class="tag">Budget: Metered / Negotiable</span>
+            </div>
+            <div class="guide-card">
+                <div class="icon">🚌</div>
+                <h3>Express Highway Buses</h3>
+                <p>Fast connection between major hubs (Colombo, Galle, Matara, Jaffna, Kandy via expressway routes).</p>
+                <span class="tag">Budget: $3 - $10</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay & Budget Options -->
+    <section id="budget" class="section">
+        <div class="section-title">
+            <h2>Accommodations by Budget</h2>
+            <p>Find the right stay tier for your journey across Sri Lanka.</p>
+        </div>
+        <div class="budget-tabs">
+            <button class="tab-btn active" onclick="switchBudget('small')">Small / Budget Tier</button>
+            <button class="tab-btn" onclick="switchBudget('medium')">Medium / Comfort Tier</button>
+            <button class="tab-btn" onclick="switchBudget('high')">High / Luxury Tier</button>
+        </div>
+        <div class="budget-details" id="budgetDisplay">
+            <!-- Dynamic Content -->
+        </div>
+    </section>
+
+    <!-- FAQs & Reviews -->
+    <section id="faqs" class="section bg-light">
+        <div class="section-title">
+            <h2>Frequently Asked Questions & Reviews</h2>
+        </div>
+        <div class="faq-review-container">
+            <div class="faq-block">
+                <h3>Frequently Asked Questions</h3>
+                <div class="accordion-item">
+                    <button class="accordion-header">What is the best time of year to visit Sri Lanka?</button>
+                    <div class="accordion-content">
+                        <p>Sri Lanka has dual monsoons: West & South coasts are best from December to April, while the East & North coasts are best from May to September.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">How do I book transport or tours?</button>
+                    <div class="accordion-content">
+                        <p>You can call our 24/7 hotline or submit a inquiry form below. We partner directly with verified local call taxi owners and certified tour drivers.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Are budget stays safe and clean?</button>
+                    <div class="accordion-content">
+                        <p>Yes, all small and medium stays listed on our platform are pre-vetted for cleanliness, guest safety, and reliable Wi-Fi amenities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-block">
+                <h3>What Travelers Say</h3>
+                <div class="review-card">
+                    <p>"The district popups helped us plan our 10-day itinerary smoothly. Fantastic transport coordination!"</p>
+                    <div class="reviewer">- Sophia M., UK</div>
+                </div>
+                <div class="review-card">
+                    <p>"Great budget stay suggestions and driver connections for our family trip from Colombo to Jaffna."</p>
+                    <div class="reviewer">- Ananth K., Australia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner & Traveller Registration Form -->
+    <section id="contact" class="section">
+        <div class="section-title">
+            <h2>Work With Us / Traveler Inquiries</h2>
+            <p>Whether you are a traveler planning a trip, or a Call Taxi owner/Hotel Manager wanting to join our partner network, reach out below!</p>
+        </div>
+        <div class="form-container">
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="userRole">I am a:</label>
+                    <select id="userRole" required>
+                        <option value="Traveler">Traveler / Tourist</option>
+                        <option value="Call Taxi Owner">Call Taxi Owner / Driver</option>
+                        <option value="Hotel Manager">Hotel Manager / Homestay Host</option>
+                        <option value="Tour Guide">Tour Guide</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNo">Contact Phone Number</label>
+                    <input type="tel" id="contactNo" placeholder="+94 7X XXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Details / Request</label>
+                    <textarea id="message" rows="4" placeholder="Tell us about your trip plans or your transport/hotel fleet details..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+            <div id="formSuccess" class="form-success-msg" style="display: none;">
+                ✅ Thank you! Your message has been received. Our coordination team will contact you shortly.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Serendib Travel & Adventures. All Rights Reserved. | Connecting Travelers, Taxi Owners, & Hotel Managers in Sri Lanka.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
